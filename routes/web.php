@@ -12,5 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('mensaje');
 });
+Route::get('telegram', 'TelegramController@enviar');
+Route::middleware(['auth'])->group(function () {
+    
+});
+
+
+Route::get('/updates', function () {
+    $response = Telegram::getUpdates();
+    return $response;
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
