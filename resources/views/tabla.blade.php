@@ -49,7 +49,7 @@
             </div>
             <div class="modal-body">
                 <form id="productForm" name="productForm" class="form-horizontal">
-                   <input type="hidden" name="id" id="id">
+                   <input type="hidden" name="alumno_id" id="alumno_id">
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Nombre</label>
                         <div class="col-sm-12">
@@ -132,7 +132,6 @@
       $.ajaxSetup({
           headers: {
               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-              
           }        
           
     });
@@ -158,7 +157,7 @@
      
     $('#createNewProduct').click(function () {
         $('#saveBtn').val("create-product");
-        $('#id').val('');
+        $('#alumno_id').val('');
         $('#productForm').trigger("reset");
         $('#modelHeading').html("Crear Nuevo Alumno");
         $('#ajaxModel').modal('show');

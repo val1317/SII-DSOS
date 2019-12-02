@@ -43,7 +43,7 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-        Alumno::updateOrCreate(['id' => $request->id],
+        Alumno::updateOrCreate(['id' => $request->alumno_id],
                 ['nombre' => $request->nombre, 'apellido' => $request->apellido,
                 'fecha_i' => $request->fecha_i, 'fecha_e' => $request->fecha_e,
                 'grado' => $request->grado, 'fecha_n' => $request->fecha_n,
